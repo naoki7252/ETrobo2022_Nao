@@ -14,8 +14,8 @@ const DrivingParam kRcourseParams[kRcourseParamsNum] = {
   { kGoForward, 10, { }, kDistanceEnd, kInvalidColor, 300 },
 };
 
-StateManager::StateManager(DrivingManager* driving_manager, BingoAgent* bingo_agent)
-    : driving_manager_(driving_manager), bingo_agent_(bingo_agent), state_(kTestRun) {
+StateManager::StateManager(DrivingManager* driving_manager, BingoAgent* bingo_agent, LineTracer* lin_tracer)
+    : driving_manager_(driving_manager), bingo_agent_(bingo_agent), line_tracer_(lin_tracer), state_(kTestRun) {
 
   // bool is_Rcourse_ = false;
   /*
@@ -68,5 +68,9 @@ void StateManager::TestRun() {
   // if (driving_manager_->DrivingParamsEmpty()) {
   //   state_ = kGetBonus;
   // }
+}
+
+void StateManager::Line() {
+  line_tracer_->Run();
 }
 

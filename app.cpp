@@ -33,7 +33,7 @@ static void initialize() {
   end_condition = new EndCondition(luminous, localize);
   driving_manager = new DrivingManager(basic_driver, line_tracer, end_condition);
   bingo_agent = new BingoAgent();
-  state_manager = new StateManager(driving_manager, bingo_agent);
+  state_manager = new StateManager(driving_manager, bingo_agent, line_tracer);
 }
 
 static void finalize() {
@@ -79,6 +79,8 @@ void main_task(intptr_t unused) {
 
 void exec_action_task(intptr_t unused) {
   state_manager->Update();
+  // state_manager->TimeAttack();
+  state_manager->Line();
   ext_tsk();
 }
 

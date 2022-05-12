@@ -47,18 +47,18 @@ void MotorIo::ResetCounts() {
   ev3_motor_reset_counts(EV3_PORT_C);
 }
 
-void MotorIo::TurnLeft() {
-  int turn_power = 50;
-  int turn_ratio = 50;
-  ev3_motor_steer(EV3_PORT_B, EV3_PORT_C, turn_power, turn_ratio);
-}
+// void MotorIo::TurnLeft() {
+//   int turn_power = 50;
+//   int turn_ratio = 50;
+//   ev3_motor_steer(EV3_PORT_B, EV3_PORT_C, turn_power, turn_ratio);
+// }
 
-void MotorIo::TestRun() {
-  int left_power = 50;
-  int right_power = 50;
-  ev3_motor_set_power(EV3_PORT_C, left_power);
-  ev3_motor_set_power(EV3_PORT_B, right_power);
-}
+// void MotorIo::TestRun() {
+//   int left_power = 50;
+//   int right_power = 50;
+//   ev3_motor_set_power(EV3_PORT_C, left_power);
+//   ev3_motor_set_power(EV3_PORT_B, right_power);
+// }
 
 SensorIo::SensorIo()
     : touch_sensor_pressed_(false), back_button_pressed_(false), color_rgb_raw_({0, 0, 0}) {
