@@ -1,7 +1,7 @@
 #include "state_manager.h"
 
 int8_t baseMotorPower = 50;
-const int lineTraceThreshold = 40;
+const int lineTraceThreshold = 50;
 
 const int kLcourseParamsNum = 1;
 const DrivingParam kLcourseParams[kLcourseParamsNum] = {
@@ -65,6 +65,7 @@ void StateManager::GetBonus() {
 
 void StateManager::TestRun() {
   driving_manager_->Update();
+  line_tracer_->Run();
   // if (driving_manager_->DrivingParamsEmpty()) {
   //   state_ = kGetBonus;
   // }

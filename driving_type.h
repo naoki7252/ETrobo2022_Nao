@@ -34,6 +34,7 @@ class LineTracer {
   void SetParam(Move move_type, int8_t base_power, Gain gain);
   void Run();
   void Stop();
+  char str[264];
 
  private:
   WheelsControl* wheels_control_;
