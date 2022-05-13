@@ -34,7 +34,7 @@ class LineTracer {
   void SetParam(Move move_type, int8_t base_power, Gain gain);
   void Run();
   void Stop();
-  char str[264];
+  char str[264]; // hsv値を表示するため
 
  private:
   WheelsControl* wheels_control_;
