@@ -85,15 +85,19 @@ void LineTracer::SetParam(Move move_type, int8_t base_power, Gain gain) {
 void LineTracer::Run() {
   float curr_hsv = luminous_->hsv_.v;
 
-  sprintf(str, "V: %f\n ", curr_hsv); // hsv表示
-  syslog(LOG_NOTICE, str); // hsv表示
+  // char str[264];
+  // sprintf(str, "right: %d", "left: %d\n", motor_io_->counts_r_, motor_io_->counts_l_);
+  // syslog(LOG_NOTICE, str);
+
+  // sprintf(str, "V: %f\n ", curr_hsv); // hsv表示
+  // syslog(LOG_NOTICE, str); // hsv表示
   // float mv = pid_control_->CalcMv(line_trace_threshold, curr_hsv);
 
   // if (move_type_ == kTraceLeftEdge) {
   //   mv *= -1;
   // }
-  base_power_ = 50; //add
-  float target_v = 50; //add
+  base_power_ = 40; //add
+  float target_v = 35; //add
   float kp = 0.5; //add
   
   float mv = (curr_hsv - target_v) * kp;
