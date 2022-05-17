@@ -89,7 +89,7 @@ void Localize::Update() {
 
 void Localize::SaveOdometri() {
   char str [256];
-  FILE* fp = fopen("Odome.csv", "w");
+  FILE* fp = fopen("Odometri/Odome.csv", "w");
 
   for (int i=0; i<curr_index; i++) {
     sprintf(str, "%d, %d\n", counts_rs[i], counts_ls[i]);
